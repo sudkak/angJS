@@ -3,21 +3,26 @@
   <title>LunchChecker</title>
    <script type="text/javascript" src="angular.min.js ">
    </script>
-   <script type="text/javascript" src="apps.js">
+  <!--  <script type="text/javascript" src="apps.js">
 
-   </script>
+   </script> -->
+
+<script type="text/javascript" src="apps_test.js">
+
+</script>
+
  </head>
 <body>
 <div ng-controller="checkController">
 <form>
   <br> <br>
 
- Lunch Items :<input type="text"  placeholder="please enter lunch Items "  ng-model="inputItems" > <br>
+ Lunch Items : <input type="text"  placeholder="please enter lunch Items "  ng-model="inputItems" ng-blur="upper();" > <br>
   <br>
 
 
-  <button type="button" name="button" ng-click = "sayHello();"> Check if too much </button> <br> <br>
-   <textarea name="name" rows="8" cols="40" > {{inputItems}} </textarea>
+  <button type="button" name="button" ng-click = "checkFood();"> Check if too much </button> <br> <br>
+   <textarea name="name" rows="8" cols="40" > Your items ares {{inputItems}} + {{toomuch}}  </textarea>
 
 </form>
 </div>
