@@ -1,8 +1,11 @@
 // first angular program assignement
 //this is tried elminating iife
-angular.module('LunchCheck',[])
+var lc = angular.module('LunchCheck',[]);
 
-.controller("checkController",DIController);
+lc.controller("checkController",DIController);
+
+
+DIController.$inject = ['$scope','$filter','$injector'];
 
 
 function DIController($scope,$filter,$injector)
@@ -22,6 +25,7 @@ console.log(count);
 $scope.upper = function () {
 
 //$scope.inputItems = $filter('uppercase')($scope.inputItems);
+
 var uppCase = $filter('uppercase');
 $scope.inputItems = uppCase($scope.inputItems);
 
