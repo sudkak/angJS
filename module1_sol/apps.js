@@ -18,14 +18,16 @@ $scope.checkFood = function () {
   console.log(($scope.inputItems+'').length);
   console.log(testStr.length)
   var count = getCount($scope.inputItems);
-
+console.log(count)
 
 if ( count > 3 ){
       $scope.toomuch="You are eating more !!"
-  }else {
+  }
+  else {
      if ( count == 0 )
      {
-       $scope.toomuch = "Please enter the date first"
+       $scope.toomuch = "Please enter the data first";
+      return;
         }
     $scope.toomuch ="You are on Diet !! Awesome"
     console.log(count);
@@ -47,7 +49,27 @@ if ( count > 3 ){
 
      console.log(str.length);
   var arrStr = str.split(',');
-   var len = arrStr.length;
+  var len=0;
+  var item;
+//implementing the logic to avoid empty string in this array .
+
+//traverse the array , and check each element of the array if any empty
+for ( item in arrStr){
+  console.log(item);
+  console.log(arrStr[item])
+  console.log(arrStr[item].length)
+ if( arrStr[item].length != 0) {
+   len += 1;
+   console.log(len);
+ }
+
+}
+
+
+console.log(arrStr)
+
+
+   //var len = arrStr.length;
    console.log(len);
    return len;
 
