@@ -1,87 +1,85 @@
 // first angular program assignement
 (
-  function(){
-'use strict'
-angular.module('LunchCheck',[])
-.controller('checkController',['$scope','$injector',chController] );
+   function() {
+       'use strict'
+       angular.module('LunchCheck', [])
+           .controller('checkController', ['$scope', '$injector', chController]);
 
 
-function chController($scope,$injector) {
+       function chController($scope, $injector) {
+
+           $scope.inputItems = "";
+
+           $scope.toomuch = " ";
+           $scope.checkFood = function() {
 
 
+               var count = getCount($scope.inputItems);
+               console.log(count)
 
-$scope.inputItems = "";
-var testStr = $scope.inputItems;
-$scope.toomuch = " ";
-$scope.checkFood = function () {
+               if (count > 3) {
+                   $scope.toomuch = "Too Much !!"
+               } else {
+                   if (count == 0) {
+                       $scope.toomuch = "Please enter data first".fontcolor("red");
 
-  console.log(($scope.inputItems+'').length);
-  console.log(testStr.length)
-  var count = getCount($scope.inputItems);
-console.log(count)
+                       return;
+                   }
+                   $scope.toomuch = "Enjoy  !! "
+                   console.log(count);
+               }
 
-if ( count > 3 ){
-      $scope.toomuch="You are eating more !!"
-  }
-  else {
-     if ( count == 0 )
-     {
-       $scope.toomuch = "Please enter the data first";
-      return;
-        }
-    $scope.toomuch ="You are on Diet !! Awesome"
-    console.log(count);
-  }
-
-};
+           };
 
 
 
 
- function getCount(str)
- {
-    console.log(str.length)
-   if (str.length == 0){
-    console.log(str.length)
-    return  0;
-
-     }
-
-     console.log(str.length);
-  var arrStr = str.split(',');
-  var len=0;
-  var item;
-//implementing the logic to avoid empty string in this array .
-
-//traverse the array , and check each element of the array if any empty
-for ( item in arrStr){
-  console.log(item);
-  console.log(arrStr[item])
-  console.log(arrStr[item].length)
- if( arrStr[item].length != 0) {
-   len += 1;
-   console.log(len);
- }
-
-}
+           function getCount(str) {
+               var arrStr;
+               var len = 0;
+               var item;
+               var pattern = /"\s*"/; //using javascript regular expression
 
 
-console.log(arrStr)
+               if (str.length == 0) {
+                   console.log(str.length)
+                   return 0;
+
+               }
 
 
-   //var len = arrStr.length;
-   console.log(len);
-   return len;
-
-
- }
+               arrStr = str.split(','); //split the input into array of strings
 
 
 
 
+               //traverse the array , and check each element of the array if any empty
+               for (item in arrStr) {
 
-}
+
+                   if (!(pattern.test(arrStr[item]) || (arrStr[item].length == 0)) /*arrStr[item].length != 0  */ ) {
+                       len += 1;
+                       console.log(len);
+                   }
+
+               }
+
+
+               console.log(arrStr)
+
+
+               //var len = arrStr.length;
+               console.log(len);
+               return len;
+
+
+           }
 
 
 
-  })();
+
+       }
+
+
+
+   })();

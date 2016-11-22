@@ -17,12 +17,13 @@
 <form>
   <br> <br>
 
- Lunch Items : <input type="text"  placeholder="please enter lunch Items "  ng-model="inputItems"  > <br>
-  <br>
+ Lunch Items : <input type="text"  placeholder="please enter lunch Items "  ng-model="inputItems"  > <br> <br>
+ Note:Empty items are not considered towards to the count !
+<br>  <br>
 
 
-  <button type="button" name="button" ng-click = "checkFood();"> Check if too much </button> <br> <br>
-   <textarea name="name" rows="8" cols="40" > Your items ares {{inputItems}} + {{toomuch}}  </textarea>
+  <button type="button" name="button" ng-click = "checkFood();"> Check If Too Much </button> <br> <br>
+   <textarea name="name" rows="8" cols="40" >  {{toomuch}}  </textarea>
 
 </form>
 </div>
