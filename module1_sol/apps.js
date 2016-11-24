@@ -1,5 +1,5 @@
 // first angular program assignement
-/*(
+(
    function() {
        'use strict'
        angular.module('LunchCheck', [])
@@ -84,7 +84,7 @@
 
 
 
-   })(); */
+   })();
 
 
-   !function(){"use strict";function o(o,t){function n(o){var t,n,e=0,c=/"\s*"/;if(0==o.length)return 0;t=o.split(",");for(n in t)c.test(t[n])||0==t[n].length||(e+=1,console.log(e));return console.log(t),console.log(e),e}o.inputItems="",o.toomuch=" ",o.checkFood=function(){if(o.count=n(o.inputItems),o.count>3)o.toomuch="Too Much !!";else{if(0==o.count)return void(o.toomuch="Please enter data first");o.toomuch="Enjoy  !! "}}}angular.module("LunchCheck",[]).controller("checkController",["$scope","$injector",o])}();
+//   !function(){"use strict";function o(o,t){function n(o){var t,n,e=0,c=/"\s*"/;if(0==o.length)return 0;t=o.split(",");for(n in t)c.test(t[n])||0==t[n].length||(e+=1,console.log(e));return console.log(t),console.log(e),e}o.inputItems="",o.toomuch=" ",o.checkFood=function(){if(o.count=n(o.inputItems),o.count>3)o.toomuch="Too Much !!";else{if(0==o.count)return void(o.toomuch="Please enter data first");o.toomuch="Enjoy  !! "}}}angular.module("LunchCheck",[]).controller("checkController",["$scope","$injector",o])}();
