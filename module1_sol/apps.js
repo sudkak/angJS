@@ -11,22 +11,24 @@
            $scope.inputItems = "";
 
            $scope.toomuch = " ";
+
            $scope.checkFood = function() {
 
 
-               var count = getCount($scope.inputItems);
-               console.log(count)
+                $scope.count = getCount($scope.inputItems);
 
-               if (count > 3) {
-                   $scope.toomuch = "Too Much !!"
+
+               if ($scope.count > 3) {
+                   $scope.toomuch = "Too Much !!";
                } else {
-                   if (count == 0) {
-                       $scope.toomuch = "Please enter data first".fontcolor("red");
+                   if ($scope.count == 0) {
+                       $scope.toomuch = "Please enter data first" ;
+
 
                        return;
                    }
                    $scope.toomuch = "Enjoy  !! "
-                   console.log(count);
+
                }
 
            };
@@ -42,7 +44,7 @@
 
 
                if (str.length == 0) {
-                   console.log(str.length)
+                  // console.log(str.length)
                    return 0;
 
                }
@@ -57,7 +59,7 @@
                for (item in arrStr) {
 
 
-                   if (!(pattern.test(arrStr[item]) || (arrStr[item].length == 0)) /*arrStr[item].length != 0  */ ) {
+                   if (!(pattern.test(arrStr[item]) || (arrStr[item].length == 0))  ) {
                        len += 1;
                        console.log(len);
                    }

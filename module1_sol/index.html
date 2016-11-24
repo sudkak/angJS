@@ -23,7 +23,8 @@
 
 
   <button type="button" name="button" ng-click = "checkFood();"> Check If Too Much </button> <br> <br>
-   <textarea name="name" rows="8" cols="40" >  {{toomuch}}  </textarea>
+
+   <textarea name="name" rows="8" cols="40" ng-style= "{ 'border-color': count == 0 ? 'red': 'green ' ,'color': count == 0 ? 'red': 'green '}"  >   {{toomuch}}  </textarea>
 
 </form>
 </div>
