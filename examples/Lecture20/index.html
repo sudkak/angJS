@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingCarts'>
+  <head >
+    <meta charset="utf-8">
+    <title>Controller with Facotry Method </title>
+
+     <script src="angular.min.js" charset="utf-8"></script>
+     <script type="text/javascript"  src="app.js" >
+     </script>
+  </head>
+  <body >
+<div>
+
+    <!-- controller 1   -->
+    <div ng-controller='ShoppingCartOne as cartOne'>
+      <h3> Shopping List Cart 1 </h3>
+      <input type="text" name="" value="" placeholder="Enter Item " ng-model='cartOne.name'>
+      <input type="text" name="" value="" placeholder="Enter Quantity" ng-model='cartOne.value'>
+      <button type="button" name="button" ng-click='cartOne.addItem();'> Add to Cart 1</button>
+      {{cartOne.name}}
+   <ol>
+   <li ng-repeat='item in cartOne.items'> {{item.name}} and {{ item.quantity }}
+
+   </li>
+ </ol>
+
+
+    </div>
+
+    <!-- controller 1
+    <div ng-controller='ShoppingCartTwo as cartTwo'>
+      <h4>Shopping List Cart 2</h4>
+       <input type="text" name="" value="" placeholder="Enter Item" ng-model=''>
+       <input type="text" name="" value="" placeholder="Enter Quantity" ng-model=''>
+       <button type="button" name="button" ng-click='CartTwo.addCartTwo();'> Add to Cart 2</button>
+    </div>
+    -->
+</div>
+  </body>
+</html>
