@@ -8,15 +8,19 @@ ShoppingCartTwo.$inject =['ShoppingListFactory'] ;
 
 function ShoppingCartOne(ShoppingListFactory){
  var cartOne = this;
- var shoppingList = ShoppingListFactory();
+ var shoppingList = ShoppingListFactory(3);
  console.log(shoppingList);
  cartOne.name="";
  cartOne.value="";
+ cartOne.error;
 
 
 cartOne.addItem = function(){
+    try{
 shoppingList.addItem(cartOne.name,cartOne.value);
-
+    } catch (errors){
+         cartOne.error = errors.message;
+        }
 }
 
 cartOne.items = shoppingList.getItem();
