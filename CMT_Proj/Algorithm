@@ -1,0 +1,29 @@
+Algorithm : 
+
+
+when click on multiple select or type on search 
+go and get the list -- use asyn function-- promises for this 
+
+
+
+option 1 : get the list and display 
+improvement : get the list , simultaneoulsy dispaly , while scroll down display 
+
+Map function : 
+* make one object by collecting data from both selects 
+or 
+  
+  
+  
+  
+First Stage : 
+
+** Use bootstrap for formatting 
+** get the list using Promise when click on Multipleselect 
+display the data 
+
+** do the same for second Multiple select 
+
+**  Map the data -- create objects with the above data . 
+
+

@@ -1,0 +1,53 @@
+<html ng-app="SkillOfferMapping">
+<head>
+    
+    <script src="angular.min.js"> </script>
+    <script src="app.js"></script>
+</head>
+    
+    <body>
+        <div ng-controller="MultipleSelectSkill as selectCtrl" ng-click="selectCtrl.test()">
+        
+      <select name="multipleSelectSkill" id="multipleSelectSkill" ng-model="selectCtrl.multipleSelectSkill" multiple  >
+      <option value="skill-1">skill 1</option>
+      <option value="skill-2">skill 2</option>
+      <option value="skill-3">skill 3</option>
+      
+          
+         </select>
+            
+        <br>
+            Selected Values : <br><br><br>
+          {{selectCtrl.multipleSelectSkill}}
+            
+            
+            
+            
+        
+        </div>
+        
+           <div ng-controller="MultipleSelectOffer as offer" ng-click=''>
+        
+      <select name="multipleSelecOffer" id="multipleSelectOffer" ng-model="offer.multipleSelectOffer" multiple  >
+      <option value="offer-1">Offer 1</option>
+      <option value="offer-2">Offer 2</option>
+      <option value="offer-3">Offer 3</option>
+      
+          
+         </select>
+            
+        <br>
+            Selected Values : <br><br><br>
+          {{offer.multipleSelectOffer}}
+            
+            </div>
+        
+        <div ng-controller="MapOfferSkill as map ">
+            <button ng-click = 'mapping()'> Map </button>
+        
+        </div>
+      
+    
+    </body>
+
+</html>
