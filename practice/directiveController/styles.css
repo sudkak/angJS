@@ -1,0 +1,21 @@
+body {
+  font-size: 1.2em;
+}
+#list1, #list2 {
+  float: left;
+}
+#list2 {
+  margin-left: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+   display : none
+}
+
+.warning {
+   font-style: italic;
+    
+}
+

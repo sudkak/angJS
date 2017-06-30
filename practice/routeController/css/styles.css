@@ -1,0 +1,6 @@
+li[ui-sref]:hover{
+    
+    font-style: italic;
+    cursor: pointer;
+    
+}

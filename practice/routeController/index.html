@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingList'>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>No cookie ShoppingList</title>
+    </head>
+    <body>
+     <h1>Welcome to Premade No cookie Shopping List</h1>
+        <load-spinner></load-spinner>
+      <ui-view> </ui-view>
+        
+        <!--libraries -->
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-ui-router.min.js"></script>
+        
+        <!--Modules --> 
+        <script src="src/shoppinglist/shoppinglist.module.js"></script>
+        <script src="src/spinner/spinner.module.js"></script>
+        
+        <!-- Routes -->
+        
+        <script src="src/routes.js"></script>
+        
+        
+        <!-- ShoppingList module artifacts --> 
+        
+        <script src="src/shoppinglist/main-shoppinglist.controller.js"></script>
+        <script src='src/shoppinglist/shoppinglist.component.js'></script>
+        <script src='src/shoppinglist/shoppinglist.service.js'></script>
+        <script src='src/shoppinglist/ItemDetailController.js'></script>
+        
+        <script src='src/spinner/loadingSpinner.component.js'></script>
+        
+        
+    </body>
+</html>

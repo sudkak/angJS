@@ -43,6 +43,8 @@ function ShoppingListComponentController($scope, $element) {
 
   $ctrl.$postLink = function () {
     $scope.$watch('$ctrl.cookiesInList()', function (newValue, oldValue) {
+        console.log(newValue);
+        console.log(oldValue);
       console.log($element);
       if (newValue === true) {
         // Show warning

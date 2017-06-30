@@ -1,4 +1,4 @@
-<html ng-app="SkillOfferMapping">
+<html ng-app="SkillOfferMapping" >
 <head>
     
     <script src="angular.min.js"> </script>
@@ -26,7 +26,7 @@
         
         </div>
         
-           <div ng-controller="MultipleSelectOffer as offer" ng-click=''>
+           <div ng-controller="MultipleSelectOffer as offer" ng-click='offer.test()' >
         
       <select name="multipleSelecOffer" id="multipleSelectOffer" ng-model="offer.multipleSelectOffer" multiple  >
       <option value="offer-1">Offer 1</option>
@@ -43,9 +43,17 @@
             </div>
         
         <div ng-controller="MapOfferSkill as map ">
-            <button ng-click = 'mapping()'> Map </button>
+            <button ng-click ='map.mapping()'> Map </button>
+            <br><br>
+          Mapping : <br><br>
+          <ul ng-repeat = 'item in map.mapOfferSkill'>
+             <li>{{item.skill }} &nbsp {{item.offer}} </li> 
+            
+            </ul>
         
-        </div>
+        </div> 
+        
+       
       
     
     </body>

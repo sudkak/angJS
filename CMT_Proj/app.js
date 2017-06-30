@@ -3,68 +3,107 @@
    angular.module('SkillOfferMapping',[]) 
     .controller('MultipleSelectSkill',MultipleSelectSkill)
     .controller('MultipleSelectOffer',MultipleSelectOffer)
-    .controller('MapOfferSkill',MapOfferSkill);
-    //.service('MapService',MapService);
+    .controller('MapOfferSkill',MapOfferSkill)
+    .service('MapService',MapService);
     
-  //  MultipleSelectSkill.$inject = [];
+   MultipleSelectSkill.$inject = ['MapService'];
     
-    function MultipleSelectSkill(){
+    function MultipleSelectSkill(MapService){
          selectCtrl= this; 
         
         selectCtrl.multipleSelectSkill =[];
+     /*   selectCtrl.passValue = function(){
+            MapService.mapSkillArray(selectCtrl.multipleSelectSkill); 
+            
+        }*/
+      //  MapService.mapSkillArray(selectCtrl.multipleSelectSkill); 
         
         selectCtrl.test = function(){
             console.log("test success");
+            MapService.mapSkillArray(selectCtrl.multipleSelectSkill); 
+         
+            
             
         }
     
     }
     
     
-  //  MultipleSelectOffer.$inject = [];
+   MultipleSelectOffer.$inject = ['MapService'];
     
-    function MultipleSelectOffer(){
+    function MultipleSelectOffer(MapService){
          offer= this; 
         
         offer.multipleSelectOffer =[];
         
+        offer.test = function(){
+            MapService.mapOfferArray(offer.multipleSelectOffer);
+            
+        }
         
             
         }
     
     
     
-    MapOfferSkill.$inject = ['MultipleSelectOffer'];
+    MapOfferSkill.$inject = ['MapService'];
     
-    function MapOfferSkill (MultipleSelectOffer){
+    function MapOfferSkill(MapService){
         map = this; 
-        map.mapOfferSkill = [];
-        
-        
-        map.mapping = function(){
-            var mapObj = {
-                //skill:MultipleSelectSkill.multipleSelectSkill,
-              // offer:MultipleSelectOffer.multipleSelectOffer
-            };
-            mapOfferSkill.push(mapObj);
-         console.log(mapOfferSkill) ;  
+       map.mapOfferSkill = MapService.getOfferSkill();
+        console.log(map.mapOfferSkill);
+        map.mapping = function (){
             
+            MapService.mapping();
             
         }
         
         
         
-    }
-    
-    
-  /*  function MapService(){
-        service = this; 
         
-        service.skill = ['skill1','skill2','skill3','skill4'];
-        service.offer = ['offer1','offer2','offer3','offer4'];
+   }
+    
+    
+  
+   function MapService(){
+        service = this; 
+        service.mapOfferSkill = [];
+         service.skill =[];
+          service.offer = [];
+        service.mapSkillArray = function(array){
+            
+            service.skill = array;
+            console.log(service.skill);
+            
+            
+        }
+        
+        service.mapOfferArray = function(array){
+            
+            service.offer = array;
+            console.log(service.offer);
+        }
+        
+        service.mapping = function(){
+            var mapObj = {
+                skill:service.skill,
+              offer:service.offer
+            };
+            console.log(mapObj)
+           // console.log(MultipleSelectOffer.multipleSelectOffer)
+           service.mapOfferSkill.push(mapObj);
+         console.log(service.mapOfferSkill) ;  
+            
+            
+        }
+         
+        service.getOfferSkill = function(){
+            return service.mapOfferSkill;
+        }
+        
            
         
-    }*/
+    }
     
     
     
